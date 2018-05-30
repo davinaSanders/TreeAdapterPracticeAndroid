@@ -23,16 +23,16 @@ public class TopTreeActivity extends AppCompatActivity {
 
 
         ListView listView = findViewById(R.id.treeListID);
-        listView.setAdapter(TopTreesAdapter);
+        listView.setAdapter(treeAdapter);
     }
 
     public void onListItemClick(View listItem) {
         Tree tree = (Tree)listItem.getTag();
         // (Tree) this is a cast. you want it to be treated as this specific type of object
-        Log.d("Movie Title: ", tree.getType());
+        Log.d("Tree type: ", tree.getType());
 
         Intent intent = new Intent(this, TreeActivity.class);
-        intent.putExtra("tree", trees);
+        intent.putExtra("tree", tree);
         startActivity(intent);
     }
 }

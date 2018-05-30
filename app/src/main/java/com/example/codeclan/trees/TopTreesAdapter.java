@@ -23,24 +23,24 @@ public class TopTreesAdapter extends ArrayAdapter<Tree> {
         super(context, 0, trees);
     }
 
-//    @Override
-//    public View getView(int position, View listItemView, ViewGroup parent){
-//        if (listItemView == null) {
-//            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.movies_item, parent, false);
-//        }
+    @Override
+    public View getView(int position, View listItemView, ViewGroup parent){
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.trees_item, parent, false);
+        }
 
-//        Tree currentTree = getItem(position);
-//        TextView ranking = listItemView.findViewById(R.id.ranking);
-//        ranking.setText(currentMovie.getRanking().toString());
-//
-//        TextView year = listItemView.findViewById(R.id.year);
-//        year.setText(currentMovie.getYear().toString());
-//
-//        TextView title = listItemView.findViewById(R.id.title);
-//        title.setText(currentMovie.getTitle().toString());
-//
-//        listItemView.setTag(currentMovie);
-//
-//        return listItemView;
+        Tree currentTree = getItem(position);
+        TextView ranking = listItemView.findViewById(R.id.rankingID);
+        ranking.setText(currentTree.getRanking().toString());
+
+        TextView type = listItemView.findViewById(R.id.typeID);
+        type.setText(currentTree.getType().toString());
+
+        TextView origin = listItemView.findViewById(R.id.originID);
+        origin.setText(currentTree.getOrigin().toString());
+
+        listItemView.setTag(currentTree);
+
+        return listItemView;
     }
 }

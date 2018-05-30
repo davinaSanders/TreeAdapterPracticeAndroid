@@ -1,10 +1,12 @@
 package com.example.codeclan.trees;
 
+import java.io.Serializable;
+
 /**
  * Created by davinasanders on 30/05/2018.
  */
 
-public class Tree {
+public class Tree implements Serializable{
     private Integer ranking;
     private String type;
     private String origin;
